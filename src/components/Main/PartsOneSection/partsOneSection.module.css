@@ -1,0 +1,139 @@
+.mainPartsOne {
+    width: 100%;
+}
+
+.containerPartsOne {
+    width: 80%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: calc(10px + 3%) auto;
+}
+
+.titleParts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 3%;
+}
+
+.titleParts h2 {
+    color: var(--blue);
+    font-weight: normal;
+    white-space: nowrap;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.titleParts::before,
+.titleParts::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: var(--black);
+    opacity: 0.7;
+}
+
+.sliderPartsOne {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentPartsOne {
+    width: 100%;
+    overflow: hidden;
+}
+
+.itemPartsOne {
+    height: 100%;
+    min-height: 350px;
+    border: 1px solid var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    border-radius: 4px;
+}
+
+.infoPartsOne {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 2px;
+}
+
+.infoPartsOne img {
+    width: 100%;
+    max-width: 160px;
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+.namePartsOne {
+    text-align: center;
+}
+
+.markNamePartsOne {
+    color: var(--black);
+    font-weight: 200;
+    font-size: 0.9rem;
+}
+
+.titleNamePartsOne {
+    color: var(--blue);
+    font-weight: 500;
+}
+
+.moedaPartsOne {
+    font-size: 1.1rem;
+}
+
+.pricePartsOne {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.parcelaPartsOne {
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.buttonPartsOne {
+    border: none;
+    outline: none;
+    font-weight: normal;
+    padding: 7px 12px;
+    background-color: transparent;
+    border-radius: 4px;
+    color: var(--red);
+    border: 1px solid var(--red);
+    cursor: pointer;
+    transition: transform ease-in-out 0.2s;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden; 
+}
+
+.arrowLeft svg,
+.arrowRight svg {
+    color: var(--red);
+}
+
+/* Hover's */
+.infoPartsOne img:hover {
+    transform: scale(1.02);
+}
+
+.buttonPartsOne:hover {
+    transform: scale(1.02);
+}
