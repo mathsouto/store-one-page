@@ -8,6 +8,7 @@ import BrandsSection from './components/Main/BrandsSection/BrandsSection'
 import ClothingSection from './components/Main/ClothingSection/ClothingSection';
 import CTASection from './components/Main/CTASection/CTASection';
 import PartsOneSection from './components/Main/PartsOneSection/PartsOneSection';
+import PartsTwoSection from './components/Main/PartsTwoSection/PartsTwoSection';
 import Footer from './components/Footer/Footer';
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
         <ClothingSection />
         <CTASection />
         <PartsOneSection />
+        <PartsTwoSection />
       </div>
       <Footer />
     </div>

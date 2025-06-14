@@ -9,7 +9,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: calc(10px + 3%) auto;
+    margin: calc(10px + 3%) auto 0 auto;
 }
 
 .titleParts {
