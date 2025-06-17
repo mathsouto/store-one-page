@@ -6,6 +6,7 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import helmets from '../../../data/partsOne.json';
+import { LuShoppingCart } from "react-icons/lu";
 
 Modal.setAppElement('#root');
 
@@ -69,7 +70,7 @@ function PartsOneSection() {
                   spaceBetween={20}
                   slidesPerView={5}
                   autoplay={{
-                    delay: 2500,
+                    delay: 2400,
                     disableOnInteraction: false,
                     pauseOnMouseEnter: true,
                   }}
@@ -112,11 +113,12 @@ function PartsOneSection() {
                             </div>
                         </div>
                         <a
+                          className={styles.buttonContainer}
                           href={produto.whatsapp}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <button className={styles.buttonPartsOne}>COMPRAR</button>
+                          <button className={styles.buttonPartsOne}><LuShoppingCart /> Comprar</button>
                         </a>
                       </div>
                     </SwiperSlide>

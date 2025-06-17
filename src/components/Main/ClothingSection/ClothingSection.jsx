@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import styles from './clothingSection.module.css';
 import clothing from '../../../data/clothing.json';
+import { LuShoppingCart } from "react-icons/lu";
 
 Modal.setAppElement('#root');
 
@@ -87,11 +88,12 @@ function ClothingSection () {
                                             </div>
                                         </div>
                                         <a
+                                        className={styles.buttonContainer}
                                         href={produto.whatsapp}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         >
-                                        <button className={styles.buttonClothing}>COMPRAR</button>
+                                        <button className={styles.buttonClothing}><LuShoppingCart /> Comprar</button>
                                         </a>
                                     </div>
                             ))}

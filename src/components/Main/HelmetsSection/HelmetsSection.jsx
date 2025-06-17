@@ -6,6 +6,7 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import helmets from '../../../data/helmets.json';
+import { LuShoppingCart } from "react-icons/lu";
 
 Modal.setAppElement('#root');
 
@@ -112,12 +113,13 @@ function HelmetsSection() {
                                 <p className={styles.parcelaHelmets}>6x de R$X.XX</p>
                             </div>
                           </div>
-                        <a
+                        <a 
+                          className={styles.buttonContainer}
                           href={produto.whatsapp}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <button className={styles.buttonHelmets}>COMPRAR</button>
+                          <button className={styles.buttonHelmets}><LuShoppingCart /> Comprar</button>
                         </a>
                       </div>
                     </SwiperSlide>

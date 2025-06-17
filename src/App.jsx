@@ -9,6 +9,9 @@ import ClothingSection from './components/Main/ClothingSection/ClothingSection';
 import CTASection from './components/Main/CTASection/CTASection';
 import PartsOneSection from './components/Main/PartsOneSection/PartsOneSection';
 import PartsTwoSection from './components/Main/PartsTwoSection/PartsTwoSection';
+import PartsThreeSection from './components/Main/PartsThreeSection/PartsThreeSection';
+import AboutSection from './components/Main/AboutSection/AboutSection';
+import FeedbackSection from './components/Main/FeedbackSection/FeedbackSection';
 import Footer from './components/Footer/Footer';
 
 const App = () => {
@@ -25,6 +28,9 @@ const App = () => {
         <CTASection />
         <PartsOneSection />
         <PartsTwoSection />
+        <PartsThreeSection />
+        <AboutSection />
+        <FeedbackSection />
       </div>
       <Footer />
     </div>

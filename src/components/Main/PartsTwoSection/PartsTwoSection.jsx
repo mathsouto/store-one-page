@@ -6,6 +6,7 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import helmets from '../../../data/partsTwo.json';
+import { LuShoppingCart } from "react-icons/lu";
 
 Modal.setAppElement('#root');
 
@@ -66,7 +67,7 @@ function PartsTwoSection() {
                   spaceBetween={20}
                   slidesPerView={5}
                   autoplay={{
-                    delay: 2500,
+                    delay: 2600,
                     disableOnInteraction: false,
                     pauseOnMouseEnter: true,
                   }}
@@ -109,11 +110,12 @@ function PartsTwoSection() {
                             </div>
                         </div>
                         <a
+                          className={styles.buttonContainer}
                           href={produto.whatsapp}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <button className={styles.buttonPartsTwo}>COMPRAR</button>
+                          <button className={styles.buttonPartsTwo}><LuShoppingCart /> Comprar</button>
                         </a>
                       </div>
                     </SwiperSlide>

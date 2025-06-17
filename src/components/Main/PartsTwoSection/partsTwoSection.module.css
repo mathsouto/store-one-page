@@ -33,7 +33,6 @@
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    border-radius: 4px;
 }
 
 .infoPartsTwo {
@@ -83,20 +82,27 @@
     font-weight: 300;
 }
 
+.buttonContainer {
+    width: 100%;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
 .buttonPartsTwo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    width: 100%;
+    padding: 10px;
     border: none;
     outline: none;
-    font-weight: normal;
-    padding: 7px 12px;
-    background-color: transparent;
-    border-radius: 4px;
-    color: var(--red);
-    border: 1px solid var(--red);
     cursor: pointer;
-    transition: transform ease-in-out 0.2s;
-    will-change: transform;
-    transform: translateZ(0);
-    backface-visibility: hidden; 
+    transition: all ease-in-out 0.2s;
+    border: 1px solid rgb(53, 53, 53);
+    color: rgb(53, 53, 53);
+    background-color: transparent;
 }
 
 .arrowLeft svg,
@@ -110,5 +116,6 @@
 }
 
 .buttonPartsTwo:hover {
-    transform: scale(1.02);
+    background-color: rgb(53, 53, 53);
+    color: white;
 }
