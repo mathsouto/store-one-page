@@ -43,8 +43,8 @@ function HelmetsSection() {
           <div className={styles.sliderHelmets}>
             <div ref={prevRef} className={styles.arrowLeft}>
               <svg
-                width="40"
-                height="40"
+                width="30"
+                height="30"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -110,7 +110,7 @@ function HelmetsSection() {
                             </div>
                             <div className={styles.priceHelmets}>
                                 <p className={styles.moedaHelmets}>R${produto.preco}</p>
-                                <p className={styles.parcelaHelmets}>6x de R$X.XX</p>
+                                <p className={styles.parcelaHelmets}>{produto.parclQtd}x de R${produto.parclValor} sem juros</p>
                             </div>
                           </div>
                         <a 
@@ -129,8 +129,8 @@ function HelmetsSection() {
             </div>
             <div ref={nextRef} className={styles.arrowRight}>
               <svg
-                width="40"
-                height="40"
+                width="30"
+                height="30"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

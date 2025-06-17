@@ -1,5 +1,6 @@
 .mainPartsTwo {
     width: 100%;
+    background: linear-gradient(90deg, var(--red) 0%, var(--blue) 100%);
 }
 
 .containerPartsTwo {
@@ -28,7 +29,6 @@
 .itemPartsTwo {
     height: 100%;
     min-height: 350px;
-    border: 1px solid var(--black);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -49,6 +49,7 @@
     max-width: 160px;
     height: auto;
     transition: transform 0.2s ease-in-out;
+    filter: drop-shadow(0px 3px 8px #0000003b);
 }
 
 .namePartsTwo {
@@ -56,13 +57,13 @@
 }
 
 .markNamePartsTwo {
-    color: var(--black);
+    color: var(--white);
     font-weight: 200;
     font-size: 0.9rem;
 }
 
 .titleNamePartsTwo {
-    color: var(--blue);
+    color: var(--white);
     font-weight: 500;
 }
 
@@ -75,11 +76,13 @@
     flex-direction: column;
     font-size: 1.2rem;
     text-align: center;
+    color: var(--white);
 }
 
 .parcelaPartsTwo {
     font-size: 0.8rem;
     font-weight: 300;
+    color: var(--white);
 }
 
 .buttonContainer {
@@ -100,14 +103,25 @@
     outline: none;
     cursor: pointer;
     transition: all ease-in-out 0.2s;
-    border: 1px solid rgb(53, 53, 53);
-    color: rgb(53, 53, 53);
+    border: 1px solid var(--white);
+    color: var(--white);
     background-color: transparent;
+}
+
+.arrowLeft,
+.arrowRight {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .arrowLeft svg,
 .arrowRight svg {
-    color: var(--red);
+    color: var(--black);
 }
 
 /* Hover's */
@@ -116,6 +130,6 @@
 }
 
 .buttonPartsTwo:hover {
-    background-color: rgb(53, 53, 53);
-    color: white;
+    background-color: var(--white);
+    color: var(--gray-btn);
 }

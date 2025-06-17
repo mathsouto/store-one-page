@@ -109,7 +109,7 @@ function PartsOneSection() {
                             </div>
                             <div className={styles.pricePartsOne}>
                                 <p className={styles.moedaPartsOne}>R${produto.preco}</p>
-                                <p className={styles.parcelaPartsOne}>5x de R$X.XX</p>
+                                <p className={styles.parcelaPartsOne}>{produto.parclQtd}x de R${produto.parclValor} sem juros</p>
                             </div>
                         </div>
                         <a

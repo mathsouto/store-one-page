@@ -106,7 +106,7 @@ function PartsThreeSection() {
                             </div>
                             <div className={styles.pricePartsThree}>
                                 <p className={styles.moedaPartsThree}>R${produto.preco}</p>
-                                <p className={styles.parcelaPartsThree}>5x de R$X.XX</p>
+                                <p className={styles.parcelaPartsThree}>{produto.parclQtd}x de R${produto.parclValor} sem juros</p>
                             </div>
                         </div>
                         <a

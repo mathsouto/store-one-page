@@ -51,7 +51,7 @@
     justify-content: center;
     flex-direction: column;
     gap: 10px;
-    padding: 0 2px;
+    padding: 0 3px;
 }
 
 .infoHelmets img {
@@ -59,6 +59,7 @@
     max-width: 130px;
     height: auto;
     transition: transform 0.2s ease-in-out;
+    filter: drop-shadow(0px 3px 8px #0000003b);
 }
 .nameHelmets {
     text-align: center;
@@ -107,14 +108,39 @@
     padding: 10px;
     cursor: pointer;
     transition: all ease-in-out 0.2s;
-    border: 1px solid rgb(53, 53, 53);
-    color: rgb(53, 53, 53);
+    border: 1px solid var(--gray-btn);
+    color: var(--gray-btn);
     background-color: transparent;
 }
 
+.arrowLeft,
+.arrowRight {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  /* position: absolute; */
+  /* top: 50%; */
+  /* transform: translateY(-50%); */
+}
+
+.arrowLeft {
+    margin-right: -15px;
+}
+
+.arrowRight {
+    margin-left: -13px;
+}
+
+
 .arrowLeft svg,
 .arrowRight svg {
-    color: var(--red);
+    color: var(--white);
+    background-color: var(--gray-btn);
+    border-radius: 50%;
 }
 
 /* Hover's */
@@ -123,6 +149,6 @@
 }
 
 .buttonHelmets:hover {
-    background-color: rgb(53, 53, 53);
-    color: white;
+    background-color: var(--gray-btn);
+    color: var(--white);
 }

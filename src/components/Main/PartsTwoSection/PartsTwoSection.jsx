@@ -39,8 +39,8 @@ function PartsTwoSection() {
           <div className={styles.sliderPartsTwo}>
             <div ref={prevRef} className={styles.arrowLeft}>
               <svg
-                width="40"
-                height="40"
+                width="30"
+                height="30"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -106,7 +106,7 @@ function PartsTwoSection() {
                             </div>
                             <div className={styles.pricePartsTwo}>
                                 <p className={styles.moedaPartsTwo}>R${produto.preco}</p>
-                                <p className={styles.parcelaPartsTwo}>5x de R$X.XX</p>
+                                <p className={styles.parcelaPartsTwo}>{produto.parclQtd}x de R${produto.parclValor} sem juros</p>
                             </div>
                         </div>
                         <a
@@ -125,8 +125,8 @@ function PartsTwoSection() {
             </div>
             <div ref={nextRef} className={styles.arrowRight}>
               <svg
-                width="40"
-                height="40"
+                width="30"
+                height="30"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

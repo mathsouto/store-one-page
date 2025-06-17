@@ -84,7 +84,7 @@ function ClothingSection () {
                                             </div>
                                             <div className={styles.priceClothing}>
                                                 <p className={styles.moedaClothing}>R${produto.preco}</p>
-                                                <p className={styles.parcelaClothing}>5x de R$X.XX</p>
+                                                <p className={styles.parcelaClothing}>{produto.parclQtd}x de R${produto.parclValor} sem juros</p>
                                             </div>
                                         </div>
                                         <a
