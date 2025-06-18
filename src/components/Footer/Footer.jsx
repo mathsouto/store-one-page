@@ -56,7 +56,7 @@ function Footer() {
       </div>
 
       <div className={styles.rightsFooter}>
-        <p>© 2025 Xxxx Xxxxx</p>
+        <p>© Todos os direitos reservados - 2025</p>
       </div>
     </footer>
   );
