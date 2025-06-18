@@ -129,11 +129,8 @@
 .arrowLeft svg,
 .arrowRight svg {
   color: var(--white);
-  /* background-color: var(--white); */
-  /* border-radius: 50%; */
 }
 
-/* Hover's */
 .infoPartsTwo img:hover {
   transform: scale(1.02);
 }

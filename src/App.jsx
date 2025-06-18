@@ -12,6 +12,7 @@ import PartsTwoSection from "./components/Main/PartsTwoSection/PartsTwoSection";
 import PartsThreeSection from "./components/Main/PartsThreeSection/PartsThreeSection";
 import AboutSection from "./components/Main/AboutSection/AboutSection";
 import FeedbackSection from "./components/Main/FeedbackSection/FeedbackSection";
+import MapSection from "./components/Main/MapSection/MapSection";
 import Footer from "./components/Footer/Footer";
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
         <PartsThreeSection />
         <AboutSection />
         <FeedbackSection />
+        <MapSection />
       </div>
       <Footer />
     </div>

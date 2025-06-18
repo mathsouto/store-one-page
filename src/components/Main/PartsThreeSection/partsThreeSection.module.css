@@ -130,9 +130,16 @@
   color: var(--white);
   background-color: var(--gray-btn);
   border-radius: 50%;
+
+  transition: background-color 0.2s ease-in-out;
 }
 
 /* Hover's */
+.arrowLeft svg:hover,
+.arrowRight svg:hover {
+  background-color: var(--blue);
+}
+
 .infoPartsThree img:hover {
   transform: scale(1.02);
 }

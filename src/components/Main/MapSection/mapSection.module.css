@@ -1,0 +1,10 @@
+.mainMap {
+  background-color: var(--gray-btn);
+  width: 100%;
+  height: 300px;
+
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
