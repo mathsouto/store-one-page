@@ -5,12 +5,26 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import helmets from '../../../data/helmets.json';
 import { LuShoppingCart } from "react-icons/lu";
 
 Modal.setAppElement('#root');
 
 function HelmetsSection() {
+  const [helmets, setHelmets] = useState([]);
+    
+    useEffect(() => {
+      fetch('/data/helmets.json') // ATENÇÃO: Ajuste este caminho se seu JSON estiver dentro de uma subpasta em 'public', como '/data/partsThree.json'
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`Erro HTTP: status ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          setHelmets(data);
+        })
+    }, []);
+
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const [swiperReady, setSwiperReady] = useState(false);
@@ -100,6 +114,7 @@ function HelmetsSection() {
                       <div className={styles.itemHelmets}>
                           <div className={styles.infoHelmets}>
                             <img
+                                alt=''
                                 src={produto.imagem}
                                 onClick={() => openModal(produto.imagem)}
                                 style={{ cursor: 'pointer' }}
@@ -188,6 +203,7 @@ function HelmetsSection() {
         </button>
         {modalImage && (
           <img
+            alt=''
             src={modalImage}
             style={{
               maxWidth: '100%',

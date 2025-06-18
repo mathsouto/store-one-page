@@ -5,12 +5,26 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import helmets from '../../../data/partsOne.json';
 import { LuShoppingCart } from "react-icons/lu";
 
 Modal.setAppElement('#root');
 
 function PartsOneSection() {
+  const [partsOne, setPartsOne] = useState([]);
+  
+    useEffect(() => {
+      fetch('/data/partsOne.json') // ATENÇÃO: Ajuste este caminho se seu JSON estiver dentro de uma subpasta em 'public', como '/data/partsThree.json'
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`Erro HTTP: status ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          setPartsOne(data);
+        })
+    }, []);
+
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const [swiperReady, setSwiperReady] = useState(false);
@@ -42,8 +56,8 @@ function PartsOneSection() {
           <div className={styles.sliderPartsOne}>
             <div ref={prevRef} className={styles.arrowLeft}>
               <svg
-                width="40"
-                height="40"
+                width="30"
+                height="30"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -94,12 +108,13 @@ function PartsOneSection() {
                     },
                   }}
                 >
-                  {helmets.map((produto) => (
+                  {partsOne.map((produto) => (
                     <SwiperSlide key={produto.id}>
                       <div className={styles.itemPartsOne}>
                           <div className={styles.infoPartsOne}>
                             <img
                                 src={produto.imagem}
+                                alt=''
                                 onClick={() => openModal(produto.imagem)}
                                 style={{ cursor: 'pointer' }}
                             />
@@ -128,8 +143,8 @@ function PartsOneSection() {
             </div>
             <div ref={nextRef} className={styles.arrowRight}>
               <svg
-                width="40"
-                height="40"
+                width="30"
+                height="30"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -188,6 +203,7 @@ function PartsOneSection() {
         {modalImage && (
           <img
             src={modalImage}
+            alt=''
             style={{
               maxWidth: '100%',
               maxHeight: '80vh',

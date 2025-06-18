@@ -43,6 +43,7 @@
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
+    padding: 5px;
 }
 
 .infoHelmets {
@@ -51,7 +52,6 @@
     justify-content: center;
     flex-direction: column;
     gap: 10px;
-    padding: 0 3px;
 }
 
 .infoHelmets img {
@@ -122,13 +122,10 @@
   justify-content: center;
   cursor: pointer;
   z-index: 10;
-  /* position: absolute; */
-  /* top: 50%; */
-  /* transform: translateY(-50%); */
 }
 
 .arrowLeft {
-    margin-right: -15px;
+    margin-right: -13px;
 }
 
 .arrowRight {

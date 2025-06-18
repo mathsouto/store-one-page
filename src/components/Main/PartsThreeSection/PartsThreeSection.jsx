@@ -5,12 +5,26 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import helmets from '../../../data/partsThree.json';
 import { LuShoppingCart } from "react-icons/lu";
 
 Modal.setAppElement('#root');
 
 function PartsThreeSection() {
+  const [partsThree, setPartsThree] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/partsThree.json') // ATENÇÃO: Ajuste este caminho se seu JSON estiver dentro de uma subpasta em 'public', como '/data/partsThree.json'
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Erro HTTP: status ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        setPartsThree(data);
+      })
+  }, []);
+
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const [swiperReady, setSwiperReady] = useState(false);
@@ -39,8 +53,8 @@ function PartsThreeSection() {
           <div className={styles.sliderPartsThree}>
             <div ref={prevRef} className={styles.arrowLeft}>
               <svg
-                width="40"
-                height="40"
+                width="30"
+                height="30"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -91,12 +105,13 @@ function PartsThreeSection() {
                     },
                   }}
                 >
-                  {helmets.map((produto) => (
+                  {partsThree.map((produto) => (
                     <SwiperSlide key={produto.id}>
                       <div className={styles.itemPartsThree}>
                           <div className={styles.infoPartsThree}>
                             <img
                                 src={produto.imagem}
+                                alt=''
                                 onClick={() => openModal(produto.imagem)}
                                 style={{ cursor: 'pointer' }}
                             />
@@ -125,8 +140,8 @@ function PartsThreeSection() {
             </div>
             <div ref={nextRef} className={styles.arrowRight}>
               <svg
-                width="40"
-                height="40"
+                width="30"
+                height="30"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -185,6 +200,7 @@ function PartsThreeSection() {
         {modalImage && (
           <img
             src={modalImage}
+            alt=''
             style={{
               maxWidth: '100%',
               maxHeight: '80vh',

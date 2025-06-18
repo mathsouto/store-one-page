@@ -58,6 +58,7 @@
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
+    padding: 5px;
 }
 
 .infoPartsOne {
@@ -66,7 +67,6 @@
     justify-content: center;
     flex-direction: column;
     gap: 10px;
-    padding: 0 2px;
 }
 
 .infoPartsOne img {
@@ -129,9 +129,31 @@
     background-color: transparent;
 }
 
+.arrowLeft,
+.arrowRight {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrowLeft {
+    margin-right: -13px;
+}
+
+.arrowRight {
+    margin-left: -13px;
+}
+
+
 .arrowLeft svg,
 .arrowRight svg {
-    color: var(--red);
+    color: var(--white);
+    background-color: var(--gray-btn);
+    border-radius: 50%;
 }
 
 /* Hover's */

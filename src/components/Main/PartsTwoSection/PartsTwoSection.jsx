@@ -5,12 +5,26 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import helmets from '../../../data/partsTwo.json';
 import { LuShoppingCart } from "react-icons/lu";
 
 Modal.setAppElement('#root');
 
 function PartsTwoSection() {
+    const [partsTwo, setPartsTwo] = useState([]);
+  
+    useEffect(() => {
+      fetch('/data/partsTwo.json') // ATENÇÃO: Ajuste este caminho se seu JSON estiver dentro de uma subpasta em 'public', como '/data/partsThree.json'
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`Erro HTTP: status ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          setPartsTwo(data);
+        })
+    }, []);
+
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   const [swiperReady, setSwiperReady] = useState(false);
@@ -91,12 +105,13 @@ function PartsTwoSection() {
                     },
                   }}
                 >
-                  {helmets.map((produto) => (
+                  {partsTwo.map((produto) => (
                     <SwiperSlide key={produto.id}>
                       <div className={styles.itemPartsTwo}>
                           <div className={styles.infoPartsTwo}>
                             <img
                                 src={produto.imagem}
+                                alt=''
                                 onClick={() => openModal(produto.imagem)}
                                 style={{ cursor: 'pointer' }}
                             />
@@ -185,6 +200,7 @@ function PartsTwoSection() {
         {modalImage && (
           <img
             src={modalImage}
+            alt=''
             style={{
               maxWidth: '100%',
               maxHeight: '80vh',

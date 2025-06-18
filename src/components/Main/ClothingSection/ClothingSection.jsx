@@ -1,12 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import styles from './clothingSection.module.css';
-import clothing from '../../../data/clothing.json';
 import { LuShoppingCart } from "react-icons/lu";
 
 Modal.setAppElement('#root');
 
 function ClothingSection () {
+    const [clothing, setClothing] = useState([]);
+      
+        useEffect(() => {
+            fetch('/data/clothing.json') // ATENÇÃO: Ajuste este caminho se seu JSON estiver dentro de uma subpasta em 'public', como '/data/partsThree.json'
+            .then(response => {
+                if (!response.ok) {
+                throw new Error(`Erro HTTP: status ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                setClothing(data);
+            })
+        }, []);
+
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [modalImage, setModalImage] = useState(null);
     const [sortType, setSortType] = useState('');
@@ -75,6 +89,7 @@ function ClothingSection () {
                                         <div className={styles.infoClothing}>
                                             <img
                                                 src={produto.imagem}
+                                                alt=''
                                                 onClick={() => openModal(produto.imagem)}
                                                 style={{ cursor: 'pointer' }}
                                             />
@@ -144,6 +159,7 @@ function ClothingSection () {
                 </button>
                 {modalImage && (
                     <img
+                    alt=''
                     src={modalImage}
                     style={{
                         maxWidth: '100%',
