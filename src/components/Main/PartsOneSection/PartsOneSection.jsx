@@ -1,29 +1,29 @@
-import React, { useRef, useEffect, useState } from 'react';
-import Modal from 'react-modal';
-import styles from './partsOneSection.module.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import React, { useRef, useEffect, useState } from "react";
+import Modal from "react-modal";
+import styles from "./partsOneSection.module.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 import { LuShoppingCart } from "react-icons/lu";
 
-Modal.setAppElement('#root');
+Modal.setAppElement("#root");
 
 function PartsOneSection() {
   const [partsOne, setPartsOne] = useState([]);
-  
-    useEffect(() => {
-      fetch('/data/partsOne.json') // ATENÇÃO: Ajuste este caminho se seu JSON estiver dentro de uma subpasta em 'public', como '/data/partsThree.json'
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`Erro HTTP: status ${response.status}`);
-          }
-          return response.json();
-        })
-        .then(data => {
-          setPartsOne(data);
-        })
-    }, []);
+
+  useEffect(() => {
+    fetch("/data/partsOne.json") // ATENÇÃO: Ajuste este caminho se seu JSON estiver dentro de uma subpasta em 'public', como '/data/partsThree.json'
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Erro HTTP: status ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setPartsOne(data);
+      });
+  }, []);
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -49,7 +49,7 @@ function PartsOneSection() {
   return (
     <>
       <div className={styles.mainPartsOne}>
-        <div id='pecas' className={styles.containerPartsOne}>
+        <div id="pecas" className={styles.containerPartsOne}>
           <div className={styles.titleParts}>
             <h2>Imperdiveis</h2>
           </div>
@@ -111,21 +111,30 @@ function PartsOneSection() {
                   {partsOne.map((produto) => (
                     <SwiperSlide key={produto.id}>
                       <div className={styles.itemPartsOne}>
-                          <div className={styles.infoPartsOne}>
-                            <img
-                                src={produto.imagem}
-                                alt=''
-                                onClick={() => openModal(produto.imagem)}
-                                style={{ cursor: 'pointer' }}
-                            />
-                            <div className={styles.namePartsOne}>
-                                <p className={styles.markNamePartsOne}>{produto.marca}</p>
-                                <p className={styles.titleNamePartsOne}>{produto.nome}</p>
-                            </div>
-                            <div className={styles.pricePartsOne}>
-                                <p className={styles.moedaPartsOne}>R${produto.preco}</p>
-                                <p className={styles.parcelaPartsOne}>{produto.parclQtd}x de R${produto.parclValor} sem juros</p>
-                            </div>
+                        <div className={styles.infoPartsOne}>
+                          <img
+                            src={produto.imagem}
+                            alt=""
+                            onClick={() => openModal(produto.imagem)}
+                            style={{ cursor: "pointer" }}
+                          />
+                          <div className={styles.namePartsOne}>
+                            <p className={styles.markNamePartsOne}>
+                              {produto.marca}
+                            </p>
+                            <p className={styles.titleNamePartsOne}>
+                              {produto.nome}
+                            </p>
+                          </div>
+                          <div className={styles.pricePartsOne}>
+                            <p className={styles.moedaPartsOne}>
+                              R${produto.preco}
+                            </p>
+                            <p className={styles.parcelaPartsOne}>
+                              {produto.parclQtd}x de R${produto.parclValor} sem
+                              juros
+                            </p>
+                          </div>
                         </div>
                         <a
                           className={styles.buttonContainer}
@@ -133,7 +142,9 @@ function PartsOneSection() {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <button className={styles.buttonPartsOne}><LuShoppingCart /> Comprar</button>
+                          <button className={styles.buttonPartsOne}>
+                            <LuShoppingCart /> Comprar
+                          </button>
                         </a>
                       </div>
                     </SwiperSlide>
@@ -165,36 +176,36 @@ function PartsOneSection() {
         contentLabel="Imagem Ampliada"
         style={{
           overlay: {
-            backgroundColor: 'rgba(0, 0, 0, 0.75)',
+            backgroundColor: "rgba(0, 0, 0, 0.75)",
             zIndex: 1000,
           },
           content: {
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            transform: 'translate(-50%, -50%)',
-            maxWidth: '90vw',
-            maxHeight: '90vh',
-            padding: '10px',
-            borderRadius: '8px',
-            backgroundColor: '#fff',
-            overflow: 'hidden',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            right: "auto",
+            bottom: "auto",
+            transform: "translate(-50%, -50%)",
+            maxWidth: "90vw",
+            maxHeight: "90vh",
+            padding: "10px",
+            borderRadius: "8px",
+            backgroundColor: "#fff",
+            overflow: "hidden",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           },
         }}
       >
         <button
           onClick={closeModal}
           style={{
-            alignSelf: 'flex-end',
-            cursor: 'pointer',
-            fontSize: '1.5rem',
-            border: 'none',
-            background: 'none',
+            alignSelf: "flex-end",
+            cursor: "pointer",
+            fontSize: "1.5rem",
+            border: "none",
+            background: "none",
           }}
           aria-label="Fechar modal"
         >
@@ -203,12 +214,12 @@ function PartsOneSection() {
         {modalImage && (
           <img
             src={modalImage}
-            alt=''
+            alt=""
             style={{
-              maxWidth: '100%',
-              maxHeight: '80vh',
-              objectFit: 'contain',
-              userSelect: 'none',
+              maxWidth: "100%",
+              maxHeight: "80vh",
+              objectFit: "contain",
+              userSelect: "none",
             }}
             draggable={false}
           />

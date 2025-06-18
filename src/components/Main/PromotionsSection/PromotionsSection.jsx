@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
-import styles from './promotionsSection.module.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import { useEffect, useState } from "react";
+import styles from "./promotionsSection.module.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 function PromotionsSection() {
   const [isMobile, setIsMobile] = useState(false);
@@ -11,16 +11,16 @@ function PromotionsSection() {
   useEffect(() => {
     const checkSize = () => setIsMobile(window.innerWidth <= 768);
     checkSize();
-    window.addEventListener('resize', checkSize);
-    return () => window.removeEventListener('resize', checkSize);
+    window.addEventListener("resize", checkSize);
+    return () => window.removeEventListener("resize", checkSize);
   }, []);
 
   const slides = [
-    { src: '/images/promotions/1.jpg', type: 'large' },
-    { src: '/images/promotions/2.jpg', type: 'small' },
-    { src: '/images/promotions/3.jpg', type: 'small' },
-    { src: '/images/promotions/3.jpg', type: 'small' },
-    { src: '/images/promotions/3.jpg', type: 'small' },
+    { src: "/images/promotions/1.jpg", type: "large" },
+    { src: "/images/promotions/2.jpg", type: "small" },
+    { src: "/images/promotions/3.jpg", type: "small" },
+    { src: "/images/promotions/3.jpg", type: "small" },
+    { src: "/images/promotions/3.jpg", type: "small" },
   ];
 
   const renderSlides = () =>
@@ -54,14 +54,14 @@ function PromotionsSection() {
     <div className={styles.mainPromotions}>
       <div className={styles.containerPromotions}>
         <div className={styles.large}>
-          <img src="/images/promotions/1.jpg" />
+          <img alt="promotion-img-1" src="/images/promotions/1.jpg" />
         </div>
         <div className={styles.smallContainer}>
           <div className={styles.small}>
-            <img src="/images/promotions/2.jpg" />
+            <img alt="promotion-img-2" src="/images/promotions/2.jpg" />
           </div>
           <div className={styles.small}>
-            <img src="/images/promotions/3.jpg" />
+            <img alt="promotion-img-3" src="/images/promotions/3.jpg" />
           </div>
         </div>
       </div>

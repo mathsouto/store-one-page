@@ -1,28 +1,28 @@
-import React, { useRef, useEffect, useState } from 'react';
-import Modal from 'react-modal';
-import styles from './partsThreeSection.module.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import React, { useRef, useEffect, useState } from "react";
+import Modal from "react-modal";
+import styles from "./partsThreeSection.module.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 import { LuShoppingCart } from "react-icons/lu";
 
-Modal.setAppElement('#root');
+Modal.setAppElement("#root");
 
 function PartsThreeSection() {
   const [partsThree, setPartsThree] = useState([]);
 
   useEffect(() => {
-    fetch('/data/partsThree.json') // ATENÇÃO: Ajuste este caminho se seu JSON estiver dentro de uma subpasta em 'public', como '/data/partsThree.json'
-      .then(response => {
+    fetch("/data/partsThree.json") // ATENÇÃO: Ajuste este caminho se seu JSON estiver dentro de uma subpasta em 'public', como '/data/partsThree.json'
+      .then((response) => {
         if (!response.ok) {
           throw new Error(`Erro HTTP: status ${response.status}`);
         }
         return response.json();
       })
-      .then(data => {
+      .then((data) => {
         setPartsThree(data);
-      })
+      });
   }, []);
 
   const prevRef = useRef(null);
@@ -49,7 +49,7 @@ function PartsThreeSection() {
   return (
     <>
       <div className={styles.mainPartsThree}>
-        <div id='pecas' className={styles.containerPartsThree}>
+        <div id="pecas" className={styles.containerPartsThree}>
           <div className={styles.sliderPartsThree}>
             <div ref={prevRef} className={styles.arrowLeft}>
               <svg
@@ -108,21 +108,30 @@ function PartsThreeSection() {
                   {partsThree.map((produto) => (
                     <SwiperSlide key={produto.id}>
                       <div className={styles.itemPartsThree}>
-                          <div className={styles.infoPartsThree}>
-                            <img
-                                src={produto.imagem}
-                                alt=''
-                                onClick={() => openModal(produto.imagem)}
-                                style={{ cursor: 'pointer' }}
-                            />
-                            <div className={styles.namePartsThree}>
-                                <p className={styles.markNamePartsThree}>{produto.marca}</p>
-                                <p className={styles.titleNamePartsThree}>{produto.nome}</p>
-                            </div>
-                            <div className={styles.pricePartsThree}>
-                                <p className={styles.moedaPartsThree}>R${produto.preco}</p>
-                                <p className={styles.parcelaPartsThree}>{produto.parclQtd}x de R${produto.parclValor} sem juros</p>
-                            </div>
+                        <div className={styles.infoPartsThree}>
+                          <img
+                            src={produto.imagem}
+                            alt=""
+                            onClick={() => openModal(produto.imagem)}
+                            style={{ cursor: "pointer" }}
+                          />
+                          <div className={styles.namePartsThree}>
+                            <p className={styles.markNamePartsThree}>
+                              {produto.marca}
+                            </p>
+                            <p className={styles.titleNamePartsThree}>
+                              {produto.nome}
+                            </p>
+                          </div>
+                          <div className={styles.pricePartsThree}>
+                            <p className={styles.moedaPartsThree}>
+                              R${produto.preco}
+                            </p>
+                            <p className={styles.parcelaPartsThree}>
+                              {produto.parclQtd}x de R${produto.parclValor} sem
+                              juros
+                            </p>
+                          </div>
                         </div>
                         <a
                           className={styles.buttonContainer}
@@ -130,7 +139,9 @@ function PartsThreeSection() {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <button className={styles.buttonPartsThree}><LuShoppingCart /> Comprar</button>
+                          <button className={styles.buttonPartsThree}>
+                            <LuShoppingCart /> Comprar
+                          </button>
                         </a>
                       </div>
                     </SwiperSlide>
@@ -162,36 +173,36 @@ function PartsThreeSection() {
         contentLabel="Imagem Ampliada"
         style={{
           overlay: {
-            backgroundColor: 'rgba(0, 0, 0, 0.75)',
+            backgroundColor: "rgba(0, 0, 0, 0.75)",
             zIndex: 1000,
           },
           content: {
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            transform: 'translate(-50%, -50%)',
-            maxWidth: '90vw',
-            maxHeight: '90vh',
-            padding: '10px',
-            borderRadius: '8px',
-            backgroundColor: '#fff',
-            overflow: 'hidden',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            right: "auto",
+            bottom: "auto",
+            transform: "translate(-50%, -50%)",
+            maxWidth: "90vw",
+            maxHeight: "90vh",
+            padding: "10px",
+            borderRadius: "8px",
+            backgroundColor: "#fff",
+            overflow: "hidden",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           },
         }}
       >
         <button
           onClick={closeModal}
           style={{
-            alignSelf: 'flex-end',
-            cursor: 'pointer',
-            fontSize: '1.5rem',
-            border: 'none',
-            background: 'none',
+            alignSelf: "flex-end",
+            cursor: "pointer",
+            fontSize: "1.5rem",
+            border: "none",
+            background: "none",
           }}
           aria-label="Fechar modal"
         >
@@ -200,12 +211,12 @@ function PartsThreeSection() {
         {modalImage && (
           <img
             src={modalImage}
-            alt=''
+            alt=""
             style={{
-              maxWidth: '100%',
-              maxHeight: '80vh',
-              objectFit: 'contain',
-              userSelect: 'none',
+              maxWidth: "100%",
+              maxHeight: "80vh",
+              objectFit: "contain",
+              userSelect: "none",
             }}
             draggable={false}
           />

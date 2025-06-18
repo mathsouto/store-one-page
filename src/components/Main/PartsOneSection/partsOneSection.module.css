@@ -1,132 +1,132 @@
 .mainPartsOne {
-    width: 100%;
+  width: 100%;
 }
 
 .containerPartsOne {
-    width: 80%;
-    max-width: 1400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 3% auto 2% auto;
+  width: 80%;
+  max-width: 1400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 3% auto 2% auto;
 }
 
 .titleParts {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 3%;
 }
 
 .titleParts h2 {
-    color: var(--blue);
-    font-weight: normal;
-    white-space: nowrap;
-    margin: 0;
-    padding: 0 20px;
+  color: var(--blue);
+  font-weight: normal;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0 20px;
 }
 
 .titleParts::before,
 .titleParts::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background-color: var(--black);
-    opacity: 0.7;
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--black);
+  opacity: 0.7;
 }
 
 .sliderPartsOne {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contentPartsOne {
-    width: 100%;
-    overflow: hidden;
+  width: 100%;
+  overflow: hidden;
 }
 
 .itemPartsOne {
-    height: 100%;
-    min-height: 350px;
-    border: 1px solid var(--black);
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: column;
-    padding: 5px;
+  height: 100%;
+  min-height: 350px;
+  border: 1px solid var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 5px;
 }
 
 .infoPartsOne {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .infoPartsOne img {
-    width: 100%;
-    max-width: 160px;
-    height: auto;
-    transition: transform 0.2s ease-in-out;
-    filter: drop-shadow(0px 3px 8px #0000003b);
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  transition: transform 0.2s ease-in-out;
+  filter: drop-shadow(0px 3px 8px #0000003b);
 }
 
 .namePartsOne {
-    text-align: center;
+  text-align: center;
 }
 
 .markNamePartsOne {
-    color: var(--black);
-    font-weight: 200;
-    font-size: 0.9rem;
+  color: var(--black);
+  font-weight: 200;
+  font-size: 0.9rem;
 }
 
 .titleNamePartsOne {
-    color: var(--blue);
-    font-weight: 500;
+  color: var(--blue);
+  font-weight: 500;
 }
 
 .moedaPartsOne {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
 .pricePartsOne {
-    display: flex;
-    flex-direction: column;
-    font-size: 1.2rem;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 .parcelaPartsOne {
-    font-size: 0.8rem;
-    font-weight: 300;
+  font-size: 0.8rem;
+  font-weight: 300;
 }
 
 .buttonContainer {
-    width: 100%;
-    padding: 0 15px;
-    text-decoration: none;
+  width: 100%;
+  padding: 0 15px;
+  text-decoration: none;
 }
 
 .buttonPartsOne {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    gap: 10px;
-    width: 100%;
-    padding: 10px;
-    cursor: pointer;
-    transition: all ease-in-out 0.2s;
-    border: 1px solid var(--gray-btn);
-    color: var(--gray-btn);
-    background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+  border: 1px solid var(--gray-btn);
+  color: var(--gray-btn);
+  background-color: transparent;
 }
 
 .arrowLeft,
@@ -141,27 +141,26 @@
 }
 
 .arrowLeft {
-    margin-right: -13px;
+  margin-right: -13px;
 }
 
 .arrowRight {
-    margin-left: -13px;
+  margin-left: -13px;
 }
-
 
 .arrowLeft svg,
 .arrowRight svg {
-    color: var(--white);
-    background-color: var(--gray-btn);
-    border-radius: 50%;
+  color: var(--white);
+  background-color: var(--gray-btn);
+  border-radius: 50%;
 }
 
 /* Hover's */
 .infoPartsOne img:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .buttonPartsOne:hover {
-    background-color: var(--gray-btn);
-    color: var(--white);
+  background-color: var(--gray-btn);
+  color: var(--white);
 }

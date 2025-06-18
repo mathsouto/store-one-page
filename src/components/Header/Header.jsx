@@ -1,17 +1,15 @@
-import styles from './header.module.css';
-import { FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
-import { Link } from 'react-scroll';
+import styles from "./header.module.css";
+import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa";
+import { Link } from "react-scroll";
 
 function Header() {
   return (
     <header>
       <div className={styles.containerHeader}>
-        <div className={styles.navOne}>
-          LOGO
-        </div>
+        <div className={styles.navOne}>LOGO</div>
         <div className={styles.navTwo}>
           <div className={styles.navButtons}>
-           <Link
+            <Link
               to="capacetes"
               smooth={true}
               duration={600}
@@ -20,7 +18,7 @@ function Header() {
             >
               Capacetes
             </Link>
-           <Link
+            <Link
               to="vestuario"
               smooth={true}
               duration={600}
@@ -29,7 +27,7 @@ function Header() {
             >
               Vestuario
             </Link>
-           <Link
+            <Link
               to="pecas"
               smooth={true}
               duration={600}
@@ -41,26 +39,28 @@ function Header() {
             {/* <a href="#">Contato</a> */}
           </div>
           <div className={styles.navSocials}>
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaFacebook size={25} color="#003782" />
-          </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebook size={25} color="#003782" />
+            </a>
 
-            <a 
+            <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaInstagram size={25} color="#003782" /></a>
-            <a 
+              <FaInstagram size={25} color="#003782" />
+            </a>
+            <a
               href="https://tiktok.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaTiktok size={25} color="#003782" /></a>
+              <FaTiktok size={25} color="#003782" />
+            </a>
           </div>
         </div>
       </div>

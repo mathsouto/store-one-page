@@ -1,20 +1,20 @@
 .mainFeedback {
-    width: 100%;
+  width: 100%;
 }
 
 .containerFeedback {
-    width: 95%;
-    max-width: 1400px;
-    margin: auto;
+  width: 95%;
+  max-width: 1400px;
+  margin: auto;
 }
 
 .contentFeedback {
-    /* width: 70%; */
-    /* margin: auto; */
+  /* width: 70%; */
+  /* margin: auto; */
 }
 
-@media screen and (max-width: 768px)  {
-    .contentFeedback {
-        /* width: 80%; */
-    }
+@media screen and (max-width: 768px) {
+  .contentFeedback {
+    /* width: 80%; */
+  }
 }

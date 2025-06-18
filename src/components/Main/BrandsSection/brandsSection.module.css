@@ -1,17 +1,17 @@
 .mainBrands {
-    width: 100%;        
+  width: 100%;
 }
 
 .containerBrands {
-    width: 95%;
-    height: 120px;
-    max-width: 1400px;
-    margin: auto;
-    background: var(--blue);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 95%;
+  height: 120px;
+  max-width: 1400px;
+  margin: auto;
+  background: var(--blue);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .iconsBrands {
@@ -27,4 +27,4 @@
   width: auto;
   height: auto;
   object-fit: contain;
-}   
+}

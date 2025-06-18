@@ -1,29 +1,29 @@
-import React, { useRef, useEffect, useState } from 'react';
-import Modal from 'react-modal';
-import styles from './partsTwoSection.module.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import React, { useRef, useEffect, useState } from "react";
+import Modal from "react-modal";
+import styles from "./partsTwoSection.module.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 import { LuShoppingCart } from "react-icons/lu";
 
-Modal.setAppElement('#root');
+Modal.setAppElement("#root");
 
 function PartsTwoSection() {
-    const [partsTwo, setPartsTwo] = useState([]);
-  
-    useEffect(() => {
-      fetch('/data/partsTwo.json') // ATENÇÃO: Ajuste este caminho se seu JSON estiver dentro de uma subpasta em 'public', como '/data/partsThree.json'
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`Erro HTTP: status ${response.status}`);
-          }
-          return response.json();
-        })
-        .then(data => {
-          setPartsTwo(data);
-        })
-    }, []);
+  const [partsTwo, setPartsTwo] = useState([]);
+
+  useEffect(() => {
+    fetch("/data/partsTwo.json") // ATENÇÃO: Ajuste este caminho se seu JSON estiver dentro de uma subpasta em 'public', como '/data/partsThree.json'
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Erro HTTP: status ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setPartsTwo(data);
+      });
+  }, []);
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -49,7 +49,7 @@ function PartsTwoSection() {
   return (
     <>
       <div className={styles.mainPartsTwo}>
-        <div id='pecas' className={styles.containerPartsTwo}>
+        <div id="pecas" className={styles.containerPartsTwo}>
           <div className={styles.sliderPartsTwo}>
             <div ref={prevRef} className={styles.arrowLeft}>
               <svg
@@ -108,21 +108,30 @@ function PartsTwoSection() {
                   {partsTwo.map((produto) => (
                     <SwiperSlide key={produto.id}>
                       <div className={styles.itemPartsTwo}>
-                          <div className={styles.infoPartsTwo}>
-                            <img
-                                src={produto.imagem}
-                                alt=''
-                                onClick={() => openModal(produto.imagem)}
-                                style={{ cursor: 'pointer' }}
-                            />
-                            <div className={styles.namePartsTwo}>
-                                <p className={styles.markNamePartsTwo}>{produto.marca}</p>
-                                <p className={styles.titleNamePartsTwo}>{produto.nome}</p>
-                            </div>
-                            <div className={styles.pricePartsTwo}>
-                                <p className={styles.moedaPartsTwo}>R${produto.preco}</p>
-                                <p className={styles.parcelaPartsTwo}>{produto.parclQtd}x de R${produto.parclValor} sem juros</p>
-                            </div>
+                        <div className={styles.infoPartsTwo}>
+                          <img
+                            src={produto.imagem}
+                            alt=""
+                            onClick={() => openModal(produto.imagem)}
+                            style={{ cursor: "pointer" }}
+                          />
+                          <div className={styles.namePartsTwo}>
+                            <p className={styles.markNamePartsTwo}>
+                              {produto.marca}
+                            </p>
+                            <p className={styles.titleNamePartsTwo}>
+                              {produto.nome}
+                            </p>
+                          </div>
+                          <div className={styles.pricePartsTwo}>
+                            <p className={styles.moedaPartsTwo}>
+                              R${produto.preco}
+                            </p>
+                            <p className={styles.parcelaPartsTwo}>
+                              {produto.parclQtd}x de R${produto.parclValor} sem
+                              juros
+                            </p>
+                          </div>
                         </div>
                         <a
                           className={styles.buttonContainer}
@@ -130,7 +139,9 @@ function PartsTwoSection() {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <button className={styles.buttonPartsTwo}><LuShoppingCart /> Comprar</button>
+                          <button className={styles.buttonPartsTwo}>
+                            <LuShoppingCart /> Comprar
+                          </button>
                         </a>
                       </div>
                     </SwiperSlide>
@@ -162,36 +173,36 @@ function PartsTwoSection() {
         contentLabel="Imagem Ampliada"
         style={{
           overlay: {
-            backgroundColor: 'rgba(0, 0, 0, 0.75)',
+            backgroundColor: "rgba(0, 0, 0, 0.75)",
             zIndex: 1000,
           },
           content: {
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            transform: 'translate(-50%, -50%)',
-            maxWidth: '90vw',
-            maxHeight: '90vh',
-            padding: '10px',
-            borderRadius: '8px',
-            backgroundColor: '#fff',
-            overflow: 'hidden',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            right: "auto",
+            bottom: "auto",
+            transform: "translate(-50%, -50%)",
+            maxWidth: "90vw",
+            maxHeight: "90vh",
+            padding: "10px",
+            borderRadius: "8px",
+            backgroundColor: "#fff",
+            overflow: "hidden",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           },
         }}
       >
         <button
           onClick={closeModal}
           style={{
-            alignSelf: 'flex-end',
-            cursor: 'pointer',
-            fontSize: '1.5rem',
-            border: 'none',
-            background: 'none',
+            alignSelf: "flex-end",
+            cursor: "pointer",
+            fontSize: "1.5rem",
+            border: "none",
+            background: "none",
           }}
           aria-label="Fechar modal"
         >
@@ -200,12 +211,12 @@ function PartsTwoSection() {
         {modalImage && (
           <img
             src={modalImage}
-            alt=''
+            alt=""
             style={{
-              maxWidth: '100%',
-              maxHeight: '80vh',
-              objectFit: 'contain',
-              userSelect: 'none',
+              maxWidth: "100%",
+              maxHeight: "80vh",
+              objectFit: "contain",
+              userSelect: "none",
             }}
             draggable={false}
           />

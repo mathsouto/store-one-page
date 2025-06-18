@@ -30,7 +30,7 @@
 }
 
 .boxCategory p {
-  font-size: clamp(0.6rem, 3vw, 1rem); 
+  font-size: clamp(0.6rem, 3vw, 1rem);
 }
 
 .circleCategory {

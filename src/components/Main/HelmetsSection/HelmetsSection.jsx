@@ -1,29 +1,29 @@
-import React, { useRef, useEffect, useState } from 'react';
-import Modal from 'react-modal';
-import styles from './helmetsSection.module.css';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import React, { useRef, useEffect, useState } from "react";
+import Modal from "react-modal";
+import styles from "./helmetsSection.module.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 import { LuShoppingCart } from "react-icons/lu";
 
-Modal.setAppElement('#root');
+Modal.setAppElement("#root");
 
 function HelmetsSection() {
   const [helmets, setHelmets] = useState([]);
-    
-    useEffect(() => {
-      fetch('/data/helmets.json') // ATENÇÃO: Ajuste este caminho se seu JSON estiver dentro de uma subpasta em 'public', como '/data/partsThree.json'
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`Erro HTTP: status ${response.status}`);
-          }
-          return response.json();
-        })
-        .then(data => {
-          setHelmets(data);
-        })
-    }, []);
+
+  useEffect(() => {
+    fetch("/data/helmets.json") // ATENÇÃO: Ajuste este caminho se seu JSON estiver dentro de uma subpasta em 'public', como '/data/partsThree.json'
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Erro HTTP: status ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setHelmets(data);
+      });
+  }, []);
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -49,7 +49,7 @@ function HelmetsSection() {
   return (
     <>
       <div className={styles.mainHelmets}>
-        <div id='capacetes' className={styles.containerHelmets}>
+        <div id="capacetes" className={styles.containerHelmets}>
           <div className={styles.titleHelmets}>
             <h2>Capacetes</h2>
             <p>Mais vendidos</p>
@@ -112,29 +112,40 @@ function HelmetsSection() {
                   {helmets.map((produto) => (
                     <SwiperSlide key={produto.id}>
                       <div className={styles.itemHelmets}>
-                          <div className={styles.infoHelmets}>
-                            <img
-                                alt=''
-                                src={produto.imagem}
-                                onClick={() => openModal(produto.imagem)}
-                                style={{ cursor: 'pointer' }}
-                            />
-                            <div className={styles.nameHelmets}>
-                                <p className={styles.markNameHelmets}>{produto.marca}</p>
-                                <p className={styles.titleNameHelmets}>{produto.nome}</p>
-                            </div>
-                            <div className={styles.priceHelmets}>
-                                <p className={styles.moedaHelmets}>R${produto.preco}</p>
-                                <p className={styles.parcelaHelmets}>{produto.parclQtd}x de R${produto.parclValor} sem juros</p>
-                            </div>
+                        <div className={styles.infoHelmets}>
+                          <img
+                            alt=""
+                            src={produto.imagem}
+                            onClick={() => openModal(produto.imagem)}
+                            style={{ cursor: "pointer" }}
+                          />
+                          <div className={styles.nameHelmets}>
+                            <p className={styles.markNameHelmets}>
+                              {produto.marca}
+                            </p>
+                            <p className={styles.titleNameHelmets}>
+                              {produto.nome}
+                            </p>
                           </div>
-                        <a 
+                          <div className={styles.priceHelmets}>
+                            <p className={styles.moedaHelmets}>
+                              R${produto.preco}
+                            </p>
+                            <p className={styles.parcelaHelmets}>
+                              {produto.parclQtd}x de R${produto.parclValor} sem
+                              juros
+                            </p>
+                          </div>
+                        </div>
+                        <a
                           className={styles.buttonContainer}
                           href={produto.whatsapp}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <button className={styles.buttonHelmets}><LuShoppingCart /> Comprar</button>
+                          <button className={styles.buttonHelmets}>
+                            <LuShoppingCart /> Comprar
+                          </button>
                         </a>
                       </div>
                     </SwiperSlide>
@@ -166,36 +177,36 @@ function HelmetsSection() {
         contentLabel="Imagem Ampliada"
         style={{
           overlay: {
-            backgroundColor: 'rgba(0, 0, 0, 0.75)',
+            backgroundColor: "rgba(0, 0, 0, 0.75)",
             zIndex: 1000,
           },
           content: {
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            right: 'auto',
-            bottom: 'auto',
-            transform: 'translate(-50%, -50%)',
-            maxWidth: '90vw',
-            maxHeight: '90vh',
-            padding: '10px',
-            borderRadius: '8px',
-            backgroundColor: '#fff',
-            overflow: 'hidden',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            right: "auto",
+            bottom: "auto",
+            transform: "translate(-50%, -50%)",
+            maxWidth: "90vw",
+            maxHeight: "90vh",
+            padding: "10px",
+            borderRadius: "8px",
+            backgroundColor: "#fff",
+            overflow: "hidden",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           },
         }}
       >
         <button
           onClick={closeModal}
           style={{
-            alignSelf: 'flex-end',
-            cursor: 'pointer',
-            fontSize: '1.5rem',
-            border: 'none',
-            background: 'none',
+            alignSelf: "flex-end",
+            cursor: "pointer",
+            fontSize: "1.5rem",
+            border: "none",
+            background: "none",
           }}
           aria-label="Fechar modal"
         >
@@ -203,13 +214,13 @@ function HelmetsSection() {
         </button>
         {modalImage && (
           <img
-            alt=''
+            alt=""
             src={modalImage}
             style={{
-              maxWidth: '100%',
-              maxHeight: '80vh',
-              objectFit: 'contain',
-              userSelect: 'none',
+              maxWidth: "100%",
+              maxHeight: "80vh",
+              objectFit: "contain",
+              userSelect: "none",
             }}
             draggable={false}
           />
